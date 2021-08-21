@@ -31,7 +31,7 @@ public class SampleComponent {
     }
 
     public void throwSample() throws Exception {
-        throw new Exception();
+        throw new Exception("throw exception");
     }
 
     public String nestCall(String msg) {
@@ -39,7 +39,7 @@ public class SampleComponent {
     }
 
     private String privateCall(String msg) {
-        return msg + "private calling";
+        return msg + " private calling";
     }
 
     public List<Person> findAll() {
