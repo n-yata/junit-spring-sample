@@ -60,4 +60,16 @@ class PersonRepositoryTest {
 
     }
 
+    @Test
+    void test4() {
+
+        int count = target.findCount("だめな名前");
+
+        assertEquals(0, count);
+
+        count = target.findCount("テスト太郎");
+
+        assertEquals(1, count);
+    }
+
 }
