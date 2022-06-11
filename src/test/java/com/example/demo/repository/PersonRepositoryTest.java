@@ -63,13 +63,27 @@ class PersonRepositoryTest {
     @Test
     void test4() {
 
-        int count = target.findCount("だめな名前");
+        int count = target.findCountByName("だめな名前");
 
         assertEquals(0, count);
 
-        count = target.findCount("テスト太郎");
+        count = target.findCountByName("テスト太郎");
 
         assertEquals(1, count);
+    }
+
+    @Test
+    void test5() {
+
+        manager.persist(new Person(null, 20));
+
+        //        int count = target.findCountByName(null);
+        //        assertEquals(1, count);
+
+        List<Person> persons = target.findByName(null);
+        System.out.println(persons.get(0));
+        assertEquals(1, persons.size());
+
     }
 
 }
